@@ -4,23 +4,19 @@
 // Сотрудники и кол-во выполненых задач содержатся как свойства объекта в формате "имя":"кол-во задач".
 
 const findBestEmployee = function (employees) {
-  // твой код
   let bestEmployee;
   let bestValue = 0;
-  for (let {
-      name,
-      value
-    } of Object.entries(employees)) {
-    if (name.value > bestValue) {
+  for (let name in employees) {
+    if (employees[name] > bestValue) {
       bestEmployee = name;
+      bestValue = employees[name];
     }
-    return bestEmployee;
+
   }
+  return bestEmployee;
 };
 
-/*
- * Вызовы функции для проверки работоспособности твоей реализации.
- */
+
 console.log(
   findBestEmployee({
     ann: 29,
