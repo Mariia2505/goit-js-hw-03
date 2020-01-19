@@ -28,10 +28,9 @@ const products = [{
 const getAllPropValues = function (arr, prop) {
   const list = [];
   for (let product of arr) {
-    if (!Object.keys(arr[0]).includes(prop)) {
-      break
+    if (prop in product) {
+      list.push(product[prop]);
     }
-    list.push(product[prop]);
   }
   return list;
 };
